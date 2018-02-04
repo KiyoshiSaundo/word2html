@@ -13,12 +13,25 @@
 <main class="wrapper">
 	<div class="word2html">
 		<div class="word2html__header">
-			<button class="btn" type="button" id="word2html">Обработать</button>
-			<button class="btn" type="button" id="reset">Очистить</button>
+			<div class="word2html__header-left">
+				<button type="button" id="word2html">Обработать</button>
+				&nbsp;
+				<button type="button" id="reset">Очистить</button>
+			</div>
+			<div class="word2html__header-sep"></div>
+			<div class="word2html__header-right">
+				<select id="test-name">
+					<option value="test1">полный текст</option>
+					<option value="test2">жирность через стили word'а</option>
+					<option value="test3" selected>нумерованный список</option>
+				</select>
+				&nbsp;
+				<button type="button" id="test-load">Загрузить тест</button>
+			</div>
 		</div>
 		<div class="word2html__panels">
 			<div class="word2html__panel">
-				<div id="inText" class="word2html__input" contenteditable="true" autofocus></div>
+				<div id="inText" class="word2html__input word2html__input--in" contenteditable="true" autofocus></div>
 			</div>
 			<div class="word2html__panel">
 				<textarea id="outText" class="word2html__input"></textarea>
@@ -31,6 +44,402 @@
 </main>
 
 <script src="js/site.js"></script>
+
+<script id="test1" type="text/html">
+	<p class="MsoNormal"><b>&lt;</b><b><span lang="EN-US">h</span>1&gt;</b><b>Вывески на магазин&lt;/</b><b><span lang="EN-US">h</span>1&gt;<o:p></o:p></b></p>
+
+	<p class="MsoNormal">Использование <span style="mso-ascii-font-family:Calibri;
+	mso-fareast-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:Calibri;
+	mso-bidi-font-family:Calibri;background:lime;mso-highlight:lime;mso-fareast-language:
+	RU">вывесок на магазин</span> – важное условие для развития успешного бизнеса. Они
+	являются эффективным вариантом рекламы. Благодаря <span style="background: darkcyan;">вывескам</span> вы можете рассказать
+	потребителям о своем бренде, деятельности <span style="background: lightgrey;">магазина</span> и т. д. <o:p></o:p></p>
+
+	<p class="MsoNormal">Большое значение для привлечения покупателей имеют стиль и
+	яркость рекламных изображений. Увидев красивую <span style="mso-ascii-font-family:
+	Calibri;mso-fareast-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:Calibri;
+	mso-bidi-font-family:Calibri;color:#00B0F0;background:black;mso-highlight:black;
+	mso-fareast-language:RU">вывеску</span>, потенциальный клиент может принять
+	решение о совершении покупки. Именно поэтому нельзя упускать шанс презентовать
+	продукцию <span style="mso-ascii-font-family:Calibri;mso-fareast-font-family:
+	&quot;Times New Roman&quot;;mso-hansi-font-family:Calibri;mso-bidi-font-family:Calibri;
+	color:white;mso-themecolor:background1;background:red;mso-highlight:red;
+	mso-fareast-language:RU">магазинов</span>. Для решения этой сложной задачи
+	обращайтесь только к профессионалам.<o:p></o:p></p>
+
+	<p class="MsoNormal"><b>&lt;h2&gt;Виды
+	вывесок&lt;/h2&gt;<o:p></o:p></b></p>
+
+	<p class="MsoNormal">ООО «ЛазерСтиль» изготавливает разнообразные <span style="background: aqua;">вывески</span>. Мы поставляем
+	качественную продукцию в любой <span style="mso-ascii-font-family:Calibri;
+	mso-fareast-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:Calibri;
+	mso-bidi-font-family:Calibri;color:#EF57BC;background:black;mso-highlight:black;
+	mso-fareast-language:RU">магазин</span>. В процессе работы особое внимание
+	уделяется пожеланиям клиентов. <o:p></o:p></p>
+
+	<p class="MsoNormal">К основным видам <span style="mso-ascii-font-family:Calibri;
+	mso-fareast-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:Calibri;
+	mso-bidi-font-family:Calibri;background:fuchsia;mso-highlight:fuchsia;
+	mso-fareast-language:RU">вывесок для магазинов</span> относят:<o:p></o:p></p>
+
+	<p class="MsoListParagraph" style="text-indent:-18.0pt;mso-list:l1 level1 lfo2"><!--[if !supportLists]--><span style="font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
+	Symbol">·<span style="font-variant-numeric: normal; font-variant-east-asian: normal; font-stretch: normal; font-size: 7pt; line-height: normal; font-family: &quot;Times New Roman&quot;;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span></span><!--[endif]-->объемные светящиеся буквы для составления
+	названий;<o:p></o:p></p>
+
+	<p class="MsoListParagraph" style="text-indent:-18.0pt;mso-list:l1 level1 lfo2"><!--[if !supportLists]--><span style="font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
+	Symbol">·<span style="font-variant-numeric: normal; font-variant-east-asian: normal; font-stretch: normal; font-size: 7pt; line-height: normal; font-family: &quot;Times New Roman&quot;;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span></span><!--[endif]-->стандартные плоские <span style="background:
+	aqua;mso-highlight:aqua">вывески</span>;<o:p></o:p></p>
+
+	<p class="MsoListParagraph" style="text-indent:-18.0pt;mso-list:l1 level1 lfo2"><!--[if !supportLists]--><span style="font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
+	Symbol">·<span style="font-variant-numeric: normal; font-variant-east-asian: normal; font-stretch: normal; font-size: 7pt; line-height: normal; font-family: &quot;Times New Roman&quot;;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span></span><!--[endif]-->панно и баннеры;<o:p></o:p></p>
+
+	<p class="MsoListParagraph" style="text-indent:-18.0pt;mso-list:l1 level1 lfo2"><!--[if !supportLists]--><span style="font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
+	Symbol">·<span style="font-variant-numeric: normal; font-variant-east-asian: normal; font-stretch: normal; font-size: 7pt; line-height: normal; font-family: &quot;Times New Roman&quot;;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span></span><!--[endif]-->разнообразные лайтбоксы.<o:p></o:p></p>
+
+	<p class="MsoNormal">Обычно <span style="background:aqua;mso-highlight:aqua">вывески</span>
+	устанавливают над входом. Это позволяет информировать покупателей о
+	местонахождении компании. Кроме того, изделия можно разместить на фасаде здания
+	в <span style="mso-ascii-font-family:Calibri;mso-fareast-font-family:&quot;Times New Roman&quot;;
+	mso-hansi-font-family:Calibri;mso-bidi-font-family:Calibri;color:yellow;
+	background:darkgreen;mso-highlight:darkgreen;mso-fareast-language:RU">магазинах</span>.
+	<o:p></o:p></p>
+
+	<p class="MsoNormal"><b>&lt;h2&gt;Особенности
+	производства&lt;/h2&gt;<o:p></o:p></b></p>
+
+	<p class="MsoNormal">Согласно закону «О рекламе», для монтажа <span style="background: yellow;">вывесок</span> требуется
+	получить разрешение у администрации города. Все нормы и ограничения обязательно
+	учитываются нами при разработке дизайна и согласовании размещаемой информации. Вопрос
+	получения разрешения на установку <span style="background:yellow;mso-highlight:
+	yellow">вывесок</span> можно решить самостоятельно. Также эту работу выполняют <span style="background: darkgreen;">специалисты</span>
+	рекламно-производственной группы «ЛазерСтиль». В некоторых случаях <span style="mso-ascii-font-family:Calibri;mso-fareast-font-family:&quot;Times New Roman&quot;;
+	mso-hansi-font-family:Calibri;mso-bidi-font-family:Calibri;color:white;
+	mso-themecolor:background1;background:fuchsia;mso-highlight:fuchsia;mso-fareast-language:
+	RU">магазину</span> не требуется разрешение. Участки с отдельно стоящими <span style="background: red;">вывесками</span> предварительно
+	выставляют на торги. При отсутствии разрешения городские власти предписывают выполнить
+	снос конструкций.<o:p></o:p></p>
+
+	<p class="MsoNormal">Разработка дизайна является сложным и ответственным этапом
+	работы. <span style="background:aqua;mso-highlight:aqua">Вывески</span> должны
+	в точности соответствовать техническому заданию, поступившему от компании, которая
+	открывает <span style="mso-ascii-font-family:Calibri;mso-fareast-font-family:
+	&quot;Times New Roman&quot;;mso-hansi-font-family:Calibri;mso-bidi-font-family:Calibri;
+	color:#FFC000;background:black;mso-highlight:black;mso-fareast-language:RU">магазины</span>.
+	Наши клиенты всегда могут предоставить информацию о своих предпочтениях в <span style="mso-ascii-font-family:Calibri;mso-fareast-font-family:&quot;Times New Roman&quot;;
+	mso-hansi-font-family:Calibri;mso-bidi-font-family:Calibri;color:white;
+	mso-themecolor:background1;background:olive;mso-highlight:olive;mso-fareast-language:
+	RU">дизайне</span>. Также мы предлагаем самостоятельно выбрать размер, форму и
+	цвет готовых изделий. В своей работе мы обязательно учитываем будущее
+	месторасположение <span style="background: yellow;">вывесок</span>.
+	Также важно знать особенности освещения в разное время суток, чтобы к <span style="mso-ascii-font-family:Calibri;mso-fareast-font-family:&quot;Times New Roman&quot;;
+	mso-hansi-font-family:Calibri;mso-bidi-font-family:Calibri;color:white;
+	mso-themecolor:background1;background:purple;mso-highlight:purple;mso-fareast-language:
+	RU">магазинам</span> всегда привлекалось внимание.<o:p></o:p></p>
+
+	<p class="MsoNormal">Изготовление и <span style="mso-ascii-font-family:Calibri;
+	mso-fareast-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:Calibri;
+	mso-bidi-font-family:Calibri;color:yellow;background:red;mso-highlight:red;
+	mso-fareast-language:RU">монтаж</span> конструкций осуществляются с
+	использованием соответствующей техники: фрезерных станков, специальных аппаратов
+	плазменной резки, оборудования для качественной сварки и т. п. <span style="mso-ascii-font-family:Calibri;mso-fareast-font-family:&quot;Times New Roman&quot;;
+	mso-hansi-font-family:Calibri;mso-bidi-font-family:Calibri;color:white;
+	mso-themecolor:background1;background:blue;mso-highlight:blue;mso-fareast-language:
+	RU">Материалы</span> отличаются высокой устойчивостью к воздействию
+	ультрафиолета и влаги. <o:p></o:p></p>
+
+	<p class="MsoNormal">Специальные крепежные элементы позволяют привлекать внимание
+	покупателей надежно зафиксированными <span style="background: red;">вывесками</span>. Установленные
+	на фасаде конструкции выдерживают даже сильные порывы ветра. Мы обеспечиваем
+	клиентов только качественными <span style="mso-ascii-font-family:Calibri;
+	mso-fareast-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:Calibri;
+	mso-bidi-font-family:Calibri;color:white;mso-themecolor:background1;background:
+	darkblue;mso-highlight:darkblue;mso-fareast-language:RU">услугами</span>. Весь
+	персонал обладает необходимым опытом работы и соблюдает технологии производства,
+	стандарты безопасности и т. д.<o:p></o:p></p>
+
+	<p class="MsoNormal"><b>&lt;h2&gt;Преимущества
+	работы с ООО «ЛазерСтиль»&lt;/h2&gt;<o:p></o:p></b></p>
+
+	<p class="MsoNormal">Представленным у нас <span style="background: darkcyan;">вывескам</span> свойственны следующие
+	характеристики:<o:p></o:p></p>
+
+	<p class="MsoListParagraph" style="text-indent:-18.0pt;mso-list:l0 level1 lfo1"><!--[if !supportLists]--><span style="font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
+	Symbol">·<span style="font-variant-numeric: normal; font-variant-east-asian: normal; font-stretch: normal; font-size: 7pt; line-height: normal; font-family: &quot;Times New Roman&quot;;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span></span><!--[endif]-->высокая эффективность воздействия на подсознание
+	потенциальных клиентов;<o:p></o:p></p>
+
+	<p class="MsoListParagraph" style="text-indent:-18.0pt;mso-list:l0 level1 lfo1"><!--[if !supportLists]--><span style="font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
+	Symbol">·<span style="font-variant-numeric: normal; font-variant-east-asian: normal; font-stretch: normal; font-size: 7pt; line-height: normal; font-family: &quot;Times New Roman&quot;;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span></span><!--[endif]-->устойчивость к неблагоприятным погодным факторам;<o:p></o:p></p>
+
+	<p class="MsoListParagraph" style="text-indent:-18.0pt;mso-list:l0 level1 lfo1"><!--[if !supportLists]--><span style="font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
+	Symbol">·<span style="font-variant-numeric: normal; font-variant-east-asian: normal; font-stretch: normal; font-size: 7pt; line-height: normal; font-family: &quot;Times New Roman&quot;;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span></span><!--[endif]-->простое <span style="background: darkgray;">обслуживание</span>, в том числе уход и
+	ремонт.<o:p></o:p></p>
+
+	<p class="MsoNormal">Только безупречное дизайнерское оформление позволяет
+	привлечь внимание людей к определенной организации. Также <span style="background: olive;">вывеска</span>
+	можете заинтересовать кратким списком предлагаемых товаров. <o:p></o:p></p>
+
+	<p class="MsoNormal"><b>&lt;h2&gt;Как
+	заказать услугу в нашей компании&lt;/h2&gt;<o:p></o:p></b></p>
+
+	<p class="MsoNormal"><span style="mso-ascii-font-family:Calibri;mso-fareast-font-family:
+	&quot;Times New Roman&quot;;mso-hansi-font-family:Calibri;mso-bidi-font-family:Calibri;
+	color:#00B050;background:black;mso-highlight:black;mso-fareast-language:RU">Цены</span>
+	на конструкции зависят от сложности дизайнерского решения. Чтобы уточнить <span style="mso-ascii-font-family:Calibri;mso-fareast-font-family:&quot;Times New Roman&quot;;
+	mso-hansi-font-family:Calibri;mso-bidi-font-family:Calibri;color:yellow;
+	background:darkred;mso-highlight:darkred;mso-fareast-language:RU">стоимость</span>
+	работы, свяжитесь с нами по телефону в Москве: <b>8 (495) 734-91-56</b>. Если вам необходима <span style="background: olive;">вывеска</span>, также можно отправить заявку по электронному
+	адресу: <a href="mailto:info@ls-sign.ru">info@ls-sign.ru</a>.<o:p></o:p></p>
+</script>
+
+<script id="test2" type="text/html">
+	<p class="MsoNormal">По способу размещения различают 2 основных вида <span style="mso-ascii-font-family:Calibri;mso-fareast-font-family:&quot;Times New Roman&quot;;
+	mso-hansi-font-family:Calibri;mso-bidi-font-family:Calibri;background:aqua;
+	mso-highlight:aqua;mso-fareast-language:RU">рекламных конструкций</span>: <o:p></o:p></p>
+
+	<p class="MsoListParagraph" style="text-indent:-18.0pt;mso-list:l0 level1 lfo2"><!--[if !supportLists]--><span style="font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
+	Symbol">·<span style="font-variant-numeric: normal; font-variant-east-asian: normal; font-stretch: normal; font-size: 7pt; line-height: normal; font-family: &quot;Times New Roman&quot;;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span></span><!--[endif]--><b>статичные</b>.
+	К этому типу изделий относят неподвижную <span style="mso-ascii-font-family:
+	Calibri;mso-fareast-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:Calibri;
+	mso-bidi-font-family:Calibri;color:#FFC000;background:black;mso-highlight:black;
+	mso-fareast-language:RU">рекламную</span> конструкцию. Обычно такие изделия
+	оснащают стильной подсветкой; <o:p></o:p></p>
+
+	<p class="MsoListParagraph" style="text-indent:-18.0pt;mso-list:l0 level1 lfo2"><!--[if !supportLists]--><span style="font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
+	Symbol">·<span style="font-variant-numeric: normal; font-variant-east-asian: normal; font-stretch: normal; font-size: 7pt; line-height: normal; font-family: &quot;Times New Roman&quot;;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span></span><!--[endif]--><b>динамичные</b>.
+	Эту <span style="mso-ascii-font-family:Calibri;mso-fareast-font-family:&quot;Times New Roman&quot;;
+	mso-hansi-font-family:Calibri;mso-bidi-font-family:Calibri;background:darkgray;
+	mso-highlight:darkgray;mso-fareast-language:RU">рекламную конструкцию</span>
+	можно оборудовать надежными неоновыми лампами. Такие изделия отличает эффект
+	движения и постоянного мерцания изображений. Яркая вывеска привлекает внимание
+	потенциальных клиентов. <o:p></o:p></p>
+
+	<p class="MsoNormal"><span style="mso-ascii-font-family:Calibri;mso-fareast-font-family:
+	&quot;Times New Roman&quot;;mso-hansi-font-family:Calibri;mso-bidi-font-family:Calibri;
+	background:darkgreen;mso-highlight:darkgreen;mso-fareast-language:RU">Рекламная
+	конструкция</span> также может иметь любой необходимый тип освещения. <o:p></o:p></p>
+
+	<p class="MsoListParagraph" style="text-indent:-18.0pt;mso-list:l2 level1 lfo1"><!--[if !supportLists]--><strong><span style="font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
+	Symbol;font-weight:normal;mso-bidi-font-weight:bold">·<span style="font-variant-numeric: normal; font-variant-east-asian: normal; font-stretch: normal; font-size: 7pt; line-height: normal; font-family: &quot;Times New Roman&quot;;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span></span></strong><!--[endif]--><strong><span style="font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;;
+	mso-ascii-theme-font:minor-latin;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+	&quot;Times New Roman&quot;;mso-bidi-theme-font:minor-bidi">Несветовая. </span></strong>Для
+	создания основы таких <span style="mso-ascii-font-family:Calibri;mso-fareast-font-family:
+	&quot;Times New Roman&quot;;mso-hansi-font-family:Calibri;mso-bidi-font-family:Calibri;
+	background:aqua;mso-highlight:aqua;mso-fareast-language:RU">рекламных
+	конструкций</span> используют металл или пластик. С помощью аппликации на поверхность
+	наносят необходимые сведения: название компании, часы <span style="mso-ascii-font-family:
+	Calibri;mso-fareast-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:Calibri;
+	mso-bidi-font-family:Calibri;color:#B40000;background:black;mso-highlight:black;
+	mso-fareast-language:RU">работы</span>, адрес фактического местонахождения и т.
+	д. Здания оборудуют конструкциями в виде объемных букв или коробов.<strong><span style="font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;;mso-ascii-theme-font:minor-latin;
+	mso-hansi-theme-font:minor-latin;mso-bidi-font-family:&quot;Times New Roman&quot;;
+	mso-bidi-theme-font:minor-bidi;font-weight:normal;mso-bidi-font-weight:bold"><o:p></o:p></span></strong></p>
+
+	<p class="MsoListParagraph" style="text-indent:-18.0pt;mso-list:l2 level1 lfo1"><!--[if !supportLists]--><strong><span style="font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
+	Symbol;font-weight:normal;mso-bidi-font-weight:bold">·<span style="font-variant-numeric: normal; font-variant-east-asian: normal; font-stretch: normal; font-size: 7pt; line-height: normal; font-family: &quot;Times New Roman&quot;;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span></span></strong><!--[endif]--><strong><span style="font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;;
+	mso-ascii-theme-font:minor-latin;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+	&quot;Times New Roman&quot;;mso-bidi-theme-font:minor-bidi">Световая. </span></strong>Подсветка
+	<span style="mso-ascii-font-family:Calibri;mso-fareast-font-family:&quot;Times New Roman&quot;;
+	mso-hansi-font-family:Calibri;mso-bidi-font-family:Calibri;background:aqua;
+	mso-highlight:aqua;mso-fareast-language:RU">рекламных конструкций</span> может быть
+	как внутренней, так и наружной. В качестве такого оборудования часто используют
+	обычные лампы дневного света.<strong><span style="font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;;
+	mso-ascii-theme-font:minor-latin;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+	&quot;Times New Roman&quot;;mso-bidi-theme-font:minor-bidi;font-weight:normal;mso-bidi-font-weight:
+	bold"><o:p></o:p></span></strong></p>
+
+	<p class="MsoListParagraph" style="text-indent:-18.0pt;mso-list:l2 level1 lfo1"><!--[if !supportLists]--><strong><span style="font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
+	Symbol;font-weight:normal;mso-bidi-font-weight:bold">·<span style="font-variant-numeric: normal; font-variant-east-asian: normal; font-stretch: normal; font-size: 7pt; line-height: normal; font-family: &quot;Times New Roman&quot;;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span></span></strong><!--[endif]--><strong><span style="font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;;
+	mso-ascii-theme-font:minor-latin;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+	&quot;Times New Roman&quot;;mso-bidi-theme-font:minor-bidi">Неоновая. Для создания </span></strong><span style="mso-ascii-font-family:Calibri;mso-fareast-font-family:&quot;Times New Roman&quot;;
+	mso-hansi-font-family:Calibri;mso-bidi-font-family:Calibri;background:aqua;
+	mso-highlight:aqua;mso-fareast-language:RU">рекламных конструкций</span><strong><span style="font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;;mso-ascii-theme-font:minor-latin;
+	mso-hansi-theme-font:minor-latin;mso-bidi-font-family:&quot;Times New Roman&quot;;
+	mso-bidi-theme-font:minor-bidi"> применяют специальные трубки из стекла</span></strong>
+	с газом. При изготовлении таких изделий можно выбрать один из двух вариантов
+	наполнения – неон или аргон. Трубки характеризуются высокой гибкостью. Именно
+	поэтому <span style="mso-ascii-font-family:Calibri;mso-fareast-font-family:
+	&quot;Times New Roman&quot;;mso-hansi-font-family:Calibri;mso-bidi-font-family:Calibri;
+	color:yellow;background:darkgreen;mso-highlight:darkgreen;mso-fareast-language:
+	RU">рекламный</span> продукт может иметь любую необходимую форму. Данный
+	тип изделий отличают простота монтажа и небольшой расход электроэнергии. Вы
+	можете заказать <span style="mso-ascii-font-family:Calibri;mso-fareast-font-family:
+	&quot;Times New Roman&quot;;mso-hansi-font-family:Calibri;mso-bidi-font-family:Calibri;
+	color:white;mso-themecolor:background1;background:darkcyan;mso-highlight:darkcyan;
+	mso-fareast-language:RU">конструкцию</span> необходимого цвета. Готовую
+	продукцию отличает яркий и нестандартный дизайн. <strong><span style="font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;;mso-ascii-theme-font:minor-latin;
+	mso-hansi-theme-font:minor-latin;mso-bidi-font-family:&quot;Times New Roman&quot;;
+	mso-bidi-theme-font:minor-bidi;font-weight:normal;mso-bidi-font-weight:bold"><o:p></o:p></span></strong></p>
+
+	<p class="MsoListParagraph" style="text-indent:-18.0pt;mso-list:l2 level1 lfo1"><!--[if !supportLists]--><span style="font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
+	Symbol">·<span style="font-variant-numeric: normal; font-variant-east-asian: normal; font-stretch: normal; font-size: 7pt; line-height: normal; font-family: &quot;Times New Roman&quot;;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span></span><!--[endif]--><strong><span style="font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;;
+	mso-ascii-theme-font:minor-latin;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+	&quot;Times New Roman&quot;;mso-bidi-theme-font:minor-bidi">Светодиодная. Указанным </span></strong><span style="mso-ascii-font-family:Calibri;mso-fareast-font-family:&quot;Times New Roman&quot;;
+	mso-hansi-font-family:Calibri;mso-bidi-font-family:Calibri;color:white;
+	mso-themecolor:background1;background:purple;mso-highlight:purple;mso-fareast-language:
+	RU">рекламным конструкциям</span> свойственны оригинальные эффекты, в том числе
+	мерцание и плавная смена оттенков свечения. <strong><span style="font-family:
+	&quot;Calibri&quot;,&quot;sans-serif&quot;;mso-ascii-theme-font:minor-latin;mso-hansi-theme-font:
+	minor-latin;mso-bidi-font-family:&quot;Times New Roman&quot;;mso-bidi-theme-font:minor-bidi">Готовая
+	</span></strong><span style="mso-ascii-font-family:Calibri;mso-fareast-font-family:
+	&quot;Times New Roman&quot;;mso-hansi-font-family:Calibri;mso-bidi-font-family:Calibri;
+	color:white;mso-themecolor:background1;background:fuchsia;mso-highlight:fuchsia;
+	mso-fareast-language:RU">рекламная</span> вывеска также
+	отличается долговечностью. <b><o:p></o:p></b></p>
+
+	<p class="MsoNormal"><b>&lt;h2&gt;Особенности
+	рабочей поверхности&lt;/h2&gt;<o:p></o:p></b></p>
+
+	<p class="MsoNormal"><span style="mso-ascii-font-family:Calibri;mso-fareast-font-family:
+	&quot;Times New Roman&quot;;mso-hansi-font-family:Calibri;mso-bidi-font-family:Calibri;
+	color:#DD59B7;background:black;mso-highlight:black;mso-fareast-language:RU">Конструкция</span>
+	может иметь 2 или 3 рабочих стороны. <o:p></o:p></p>
+
+	<p class="MsoListParagraph" style="text-indent:-18.0pt;mso-list:l1 level1 lfo3"><!--[if !supportLists]--><span style="font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
+	Symbol">·<span style="font-variant-numeric: normal; font-variant-east-asian: normal; font-stretch: normal; font-size: 7pt; line-height: normal; font-family: &quot;Times New Roman&quot;;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span></span><!--[endif]--><b>Лицевая</b>
+	(по ходу движения, сторона<a href="http://www.nazaykin.ru/"><span style="color: windowtext; text-decoration-line: none;"> </span></a>А
+	(A). <o:p></o:p></p>
+
+	<p class="MsoListParagraph" style="text-indent:-18.0pt;mso-list:l1 level1 lfo3"><!--[if !supportLists]--><span style="font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
+	Symbol">·<span style="font-variant-numeric: normal; font-variant-east-asian: normal; font-stretch: normal; font-size: 7pt; line-height: normal; font-family: &quot;Times New Roman&quot;;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span></span><!--[endif]--><b>Обратная</b>
+	(против хода, сторона Б (B).<o:p></o:p></p>
+
+	<span style="font-size:11.0pt;line-height:115%;font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;;
+	mso-ascii-theme-font:minor-latin;mso-fareast-font-family:Calibri;mso-fareast-theme-font:
+	minor-latin;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:&quot;Times New Roman&quot;;
+	mso-bidi-theme-font:minor-bidi;mso-ansi-language:RU;mso-fareast-language:EN-US;
+	mso-bidi-language:AR-SA">Возможно </span><span style="font-size: 11pt; line-height: 115%; font-family: Calibri, sans-serif; background: lime;">изготовление</span><span style="font-size:11.0pt;line-height:115%;font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;;
+	mso-ascii-theme-font:minor-latin;mso-fareast-font-family:Calibri;mso-fareast-theme-font:
+	minor-latin;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:&quot;Times New Roman&quot;;
+	mso-bidi-theme-font:minor-bidi;mso-ansi-language:RU;mso-fareast-language:EN-US;
+	mso-bidi-language:AR-SA"> вращающихся рабочих поверхностей. В этом случае
+	каждая из них будет считаться стороной А для любых направлений потока. Обычно
+	такими </span><span style="font-size: 11pt; line-height: 115%; font-family: Calibri, sans-serif; background: olive;">конструкциями</span><span style="font-size:11.0pt;line-height:115%;
+	font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;;mso-ascii-theme-font:minor-latin;mso-fareast-font-family:
+	Calibri;mso-fareast-theme-font:minor-latin;mso-hansi-theme-font:minor-latin;
+	mso-bidi-font-family:&quot;Times New Roman&quot;;mso-bidi-theme-font:minor-bidi;
+	mso-ansi-language:RU;mso-fareast-language:EN-US;mso-bidi-language:AR-SA"> оборудуют
+	площади. Изделия насчитывают 3 поверхности.</span>
+</script>
+
+<script id="test3" type="text/html">
+	<p class="MsoNormal"><b>&lt;</b><b><span lang="EN-US">h</span>2&gt;Виды рекламных вывесок&lt;/</b><b><span lang="EN-US">h</span>2&gt;<o:p></o:p></b></p>
+
+	<p class="MsoNormal">По способу размещения букв различают следующие виды <span style="mso-ascii-font-family:Calibri;mso-fareast-font-family:&quot;Times New Roman&quot;;
+	mso-hansi-font-family:Calibri;mso-bidi-font-family:Calibri;color:white;
+	mso-themecolor:background1;background:purple;mso-highlight:purple;mso-fareast-language:
+	RU">рекламных вывесок</span>: <o:p></o:p></p>
+
+	<p class="MsoListParagraph" style="text-indent:-18.0pt;mso-list:l0 level1 lfo1"><!--[if !supportLists]-->1)<span style="font-variant-numeric: normal; font-variant-east-asian: normal; font-stretch: normal; font-size: 7pt; line-height: normal; font-family: &quot;Times New Roman&quot;;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span><!--[endif]--><b>статичные</b>.
+	К данному типу изделий относят неподвижные <span style="mso-ascii-font-family:
+	Calibri;mso-fareast-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:Calibri;
+	mso-bidi-font-family:Calibri;color:red;background:black;mso-highlight:black;
+	mso-fareast-language:RU">наружные</span> конструкции. Практически всегда их оснащают
+	стильной подсветкой; <o:p></o:p></p>
+
+	<p class="MsoListParagraph" style="text-indent:-18.0pt;mso-list:l0 level1 lfo1"><!--[if !supportLists]-->2)<span style="font-variant-numeric: normal; font-variant-east-asian: normal; font-stretch: normal; font-size: 7pt; line-height: normal; font-family: &quot;Times New Roman&quot;;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span><!--[endif]--><b>динамичные</b>.
+	Эти <span style="mso-ascii-font-family:Calibri;mso-fareast-font-family:&quot;Times New Roman&quot;;
+	mso-hansi-font-family:Calibri;mso-bidi-font-family:Calibri;color:#00B050;
+	background:black;mso-highlight:black;mso-fareast-language:RU">рекламные вывески</span>
+	можно оборудовать неоновыми лампами. Благодаря такому подходу создается эффект
+	постоянного мерцания и движения. Стильной <span style="mso-ascii-font-family:
+	Calibri;mso-fareast-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:Calibri;
+	mso-bidi-font-family:Calibri;color:#FFC000;background:black;mso-highlight:black;
+	mso-fareast-language:RU">вывеской</span> можно привлечь внимание потенциальных
+	клиентов. <o:p></o:p></p>
+
+	<p class="MsoNormal"><span style="mso-ascii-font-family:Calibri;mso-fareast-font-family:
+	&quot;Times New Roman&quot;;mso-hansi-font-family:Calibri;mso-bidi-font-family:Calibri;
+	color:white;mso-themecolor:background1;background:darkgreen;mso-highlight:darkgreen;
+	mso-fareast-language:RU">Рекламная</span> продукция также различается по
+	принципу освещения. <o:p></o:p></p>
+
+	<p class="MsoListParagraph" style="text-indent:-18.0pt;mso-list:l1 level1 lfo2"><!--[if !supportLists]--><strong><span style="font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
+	Symbol;font-weight:normal;mso-bidi-font-weight:bold">·<span style="font-variant-numeric: normal; font-variant-east-asian: normal; font-stretch: normal; font-size: 7pt; line-height: normal; font-family: &quot;Times New Roman&quot;;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span></span></strong><!--[endif]--><strong><span style="font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;;
+	mso-ascii-theme-font:minor-latin;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+	&quot;Times New Roman&quot;;mso-bidi-theme-font:minor-bidi">Несветовая. </span></strong>Основу
+	<span style="mso-ascii-font-family:Calibri;mso-fareast-font-family:&quot;Times New Roman&quot;;
+	mso-hansi-font-family:Calibri;mso-bidi-font-family:Calibri;background:darkgray;
+	mso-highlight:darkgray;mso-fareast-language:RU">рекламной вывески</span> изготавливают
+	из металла или пластика. С помощью аппликации на нее наносят необходимую
+	информацию: название фирмы, часы работы, адрес и т. п. Также здания могут быть
+	оснащены объемными <span style="background: yellow;">вывесками</span>
+	в виде букв или коробов различной формы.<strong><span style="font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;;
+	mso-ascii-theme-font:minor-latin;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+	&quot;Times New Roman&quot;;mso-bidi-theme-font:minor-bidi;font-weight:normal;mso-bidi-font-weight:
+	bold"><o:p></o:p></span></strong></p>
+
+	<p class="MsoListParagraph" style="text-indent:-18.0pt;mso-list:l1 level1 lfo2"><!--[if !supportLists]--><strong><span style="font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
+	Symbol;font-weight:normal;mso-bidi-font-weight:bold">·<span style="font-variant-numeric: normal; font-variant-east-asian: normal; font-stretch: normal; font-size: 7pt; line-height: normal; font-family: &quot;Times New Roman&quot;;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span></span></strong><!--[endif]--><strong><span style="font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;;
+	mso-ascii-theme-font:minor-latin;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+	&quot;Times New Roman&quot;;mso-bidi-theme-font:minor-bidi">Световая. </span></strong>Подсветка
+	в таких <span style="background: lime;">вывесках</span>
+	может располагаться внутри или снаружи. В качестве постоянно заменяемого
+	оборудования нередко используют стандартные лампы дневного света.<strong><span style="font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;;mso-ascii-theme-font:minor-latin;
+	mso-hansi-theme-font:minor-latin;mso-bidi-font-family:&quot;Times New Roman&quot;;
+	mso-bidi-theme-font:minor-bidi;font-weight:normal;mso-bidi-font-weight:bold"><o:p></o:p></span></strong></p>
+
+	<p class="MsoListParagraph" style="text-indent:-18.0pt;mso-list:l1 level1 lfo2"><!--[if !supportLists]--><strong><span style="font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
+	Symbol;font-weight:normal;mso-bidi-font-weight:bold">·<span style="font-variant-numeric: normal; font-variant-east-asian: normal; font-stretch: normal; font-size: 7pt; line-height: normal; font-family: &quot;Times New Roman&quot;;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span></span></strong><!--[endif]--><strong><span style="font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;;
+	mso-ascii-theme-font:minor-latin;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+	&quot;Times New Roman&quot;;mso-bidi-theme-font:minor-bidi">Неоновая. Для создания изделий
+	необходимы трубки из стекла</span></strong> с газом. Существует всего 2&nbsp;варианта
+	наполнения – неон и аргон. Такие трубки отличаются высокой гибкостью. Именно
+	поэтому <span style="mso-ascii-font-family:Calibri;mso-fareast-font-family:
+	&quot;Times New Roman&quot;;mso-hansi-font-family:Calibri;mso-bidi-font-family:Calibri;
+	color:white;mso-themecolor:background1;background:darkblue;mso-highlight:darkblue;
+	mso-fareast-language:RU">рекламная вывеска</span> может иметь любую форму. Неоновая
+	реклама не вызывает трудностей при монтаже. Вы можете приобрести <span style="background: fuchsia;">вывеску</span>
+	необходимого цвета. Готовая продукция отличается яркостью и нестандартностью. С
+	такими <span style="background:yellow;mso-highlight:yellow">вывесками</span> можно
+	обеспечить сравнительно небольшой расход электроэнергии.<strong><span style="font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;;mso-ascii-theme-font:minor-latin;
+	mso-hansi-theme-font:minor-latin;mso-bidi-font-family:&quot;Times New Roman&quot;;
+	mso-bidi-theme-font:minor-bidi;font-weight:normal;mso-bidi-font-weight:bold"><o:p></o:p></span></strong></p>
+
+	<p class="MsoListParagraph" style="text-indent:-18.0pt;mso-list:l1 level1 lfo2"><!--[if !supportLists]--><span style="font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
+	Symbol">·<span style="font-variant-numeric: normal; font-variant-east-asian: normal; font-stretch: normal; font-size: 7pt; line-height: normal; font-family: &quot;Times New Roman&quot;;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span></span><!--[endif]--><strong><span style="font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;;
+	mso-ascii-theme-font:minor-latin;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+	&quot;Times New Roman&quot;;mso-bidi-theme-font:minor-bidi">Светодиодная. Указанным </span></strong><span style="mso-ascii-font-family:Calibri;mso-fareast-font-family:&quot;Times New Roman&quot;;
+	mso-hansi-font-family:Calibri;mso-bidi-font-family:Calibri;color:yellow;
+	background:black;mso-highlight:black;mso-fareast-language:RU">наружным</span> конструкциям
+	свойственно наличие оригинальных эффектов: мерцания, плавной смены оттенков
+	свечения и т. д. <strong><span style="font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;;
+	mso-ascii-theme-font:minor-latin;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+	&quot;Times New Roman&quot;;mso-bidi-theme-font:minor-bidi">Готовую </span></strong><span style="mso-ascii-font-family:Calibri;mso-fareast-font-family:&quot;Times New Roman&quot;;
+	mso-hansi-font-family:Calibri;mso-bidi-font-family:Calibri;background:darkcyan;
+	mso-highlight:darkcyan;mso-fareast-language:RU">рекламную вывеску</span> также отличает
+	долговечность. Благодаря этому вы можете экономить на ремонте.<b><o:p></o:p></b></p>
+
+	<p class="MsoNormal"><b>&lt;</b><b><span lang="EN-US">h</span>2&gt;Особенности производства вывесок&lt;/</b><b><span lang="EN-US">h</span>2&gt;<o:p></o:p></b></p>
+
+	<p class="MsoNormal">В соответствии с законом «О рекламе» для установки <span style="mso-ascii-font-family:Calibri;mso-fareast-font-family:&quot;Times New Roman&quot;;
+	mso-hansi-font-family:Calibri;mso-bidi-font-family:Calibri;color:white;
+	mso-themecolor:background1;background:olive;mso-highlight:olive;mso-fareast-language:
+	RU">наружной</span> конструкции требуется разрешение городской администрации. Когда
+	вы согласовываете <span style="background:fuchsia;mso-highlight:fuchsia">вывеску</span>,
+	большое значение имеет правильная подача информации. Действующие нормы и
+	ограничения также необходимо учитывать при разработке дизайнерского решения.<o:p></o:p></p>
+</script>
 
 </body>
 </html>

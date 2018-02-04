@@ -33,7 +33,14 @@ body {
     padding: 10px;
     background: #343434;
 	justify-content: flex-start;
+}
+.word2html__header-left,
+.word2html__header-right {
+	display: flex;
 	align-items: center;
+}
+.word2html__header-sep {
+	flex-grow: 1;
 }
 .word2html__panels {
 	display: flex;
@@ -66,19 +73,26 @@ body {
 	background: #fff;
     appearance: none;
 }
+.word2html__input--in:empty:before {
+	content: 'Insert text from MS Word';
+	color: #aaa;
+}
+
 .word2html__input:focus {
     outline: 0;
     outline-offset: 0;
 }
 
-.btn {
-	margin-right: 10px;
+select {
+	padding: 3px 10px;
+}
+button {
 	padding: 4px 10px;
 	cursor: pointer;
 	border: 1px solid rgba(0, 0, 0, .1);
 	border-radius: 3px;
 	background: linear-gradient(to bottom, #ddd 0, #bbb 100%);
 }
-.btn:hover {
+button:hover {
 	background: linear-gradient(to bottom, #bbb 0, #ddd 100%);
 }

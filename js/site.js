@@ -1,8 +1,11 @@
-var elTextIn = document.getElementById('inText');
-var elTextOut = document.getElementById('outText');
-var elExample = document.getElementById('exampleText');
+var elTextIn      = document.getElementById('inText');
+var elTextOut     = document.getElementById('outText');
+var elExample     = document.getElementById('exampleText');
 var btnWordToHtml = document.getElementById('word2html');
-var btnReset = document.getElementById('reset');
+var btnReset      = document.getElementById('reset');
+
+var btnTest = document.getElementById('test-load');
+var testName = document.getElementById('test-name');
 
 btnWordToHtml.onclick = function(event) {
 	event.preventDefault();
@@ -14,9 +17,10 @@ btnReset.onclick = function(event) {
 	clearText();
 };
 
-/* NOTES
-Иногда встречается жирный текст вставленный через стили word'a
-*/
+btnTest.onclick = function(event) {
+	event.preventDefault();
+	loadTest(testName.value);
+}
 
 function clearText() {
 	console.info('--- clear');
@@ -146,14 +150,23 @@ function processText(str) {
 			console.info('>>> handleLists');
 			// console.log(str);
 
+			// маркированные списки
 			// стираем все <ul>
 			str = str.replace(/<\/?ul>/gi, "");
 			// заменяем word'ие списки на html'ые
-			str = str.replace(/<p>(•|·)(((?!<\/p>).)*)<\/p>/gi, "<li>$2</li>")
+			str = str.replace(/<p>(((?!<\/p>).)*)(•|·)(((?!<\/p>).)*)<\/p>/gi, "<li>$1$4</li>")
 			// оборачиваем каждый li в ul
 			str = str.replace(/(<li>((?!<\/li>).)*<\/li>)/gi, "<ul>$1</ul>");
 			// удаляем комбинации </ul><ul>, чтобы получить блоки списков
 			str = str.replace(/<\/ul>\ *<ul>/gi, "");
+
+			// нумерованные списки
+			str = str.replace(/<\/?ol>/gi, "");
+			str = str.replace(/<p>(((?!<\/p>).)*)(\d\))(((?!<\/p>).)*)<\/p>/gi, "<li-num>$1$4</li-num>")
+			str = str.replace(/(<li-num>((?!<\/li-num>).)*<\/li-num>)/gi, "<ol>$1</ol>");
+			str = str.replace(/<\/ol>\ *<ol>/gi, "");
+			str = str.replace(/<li-num>/gi, "<li>");
+			str = str.replace(/<\/li-num>/gi, "</li>");
 
 			// console.log(str);
 			return resolve();
@@ -170,6 +183,7 @@ function processText(str) {
 			         .replace(/<\/li>/gi, "</li>\r\n") // перенос после </li>
 			         .replace(/<li>/gi, "\t<li>") // отступы для <li>
 			         .replace(/<ul>/gi, "<ul>\r\n") // перенос после <ul>
+			         .replace(/<ol>/gi, "<ol>\r\n") // перенос после <ol>
 			         .replace(/<\/ul>/gi, "</ul>\r\n")  // перенос после </ul>
 			         .replace(/\ {2,}/gi, " ") // множественные пробелы
 					 .replace(/<p>\ */gi, '<p>') // пробелы в начале <p>
@@ -180,4 +194,9 @@ function processText(str) {
 			return resolve();
 		});
 	}
+}
+
+function loadTest(name) {
+	var text = document.getElementById(name).innerHTML;
+	elTextIn.innerHTML = text;
 }
