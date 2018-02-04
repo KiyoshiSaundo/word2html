@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>word2html</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+	<link rel="stylesheet" href="css/normalize.css">
+	<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<main class="wrapper">
+	<div class="word2html">
+		<div class="word2html__header">
+			<button class="btn" type="button" id="word2html">Обработать</button>
+			<button class="btn" type="button" id="reset">Очистить</button>
+		</div>
+		<div class="word2html__panels">
+			<div class="word2html__panel">
+				<div id="inText" class="word2html__input" contenteditable="true" autofocus></div>
+			</div>
+			<div class="word2html__panel">
+				<textarea id="outText" class="word2html__input"></textarea>
+			</div>
+			<div class="word2html__panel word2html__panel--example">
+				<div id="exampleText" class="word2html__input"></div>
+			</div>
+		</div>
+	</div>
+</main>
+
+<script src="js/site.js"></script>
+
+</body>
+</html>
