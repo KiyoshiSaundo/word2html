@@ -34,12 +34,13 @@ function processText(str) {
 		.then(removeAttributes)
 		.then(removeTrash)
 		.then(removeBreaks)
-		.then(removeEmptyTags)
 		.then(handleHtmlEntity)
 		.then(doubleTags)
 		.then(handleLists)
+		.then(handleTables)
 		.then(formatStr)
-		.then(endProcess);
+		.then(endProcess)
+		;
 
 	function startProcess() {
 		return new Promise(function(resolve, reject) {
@@ -57,15 +58,24 @@ function processText(str) {
 	// style, class...
 	function removeAttributes() {
 		return new Promise(function(resolve, reject) {
-			console.info('>>> removeTrash');
+			console.info('>>> removeAttributes');
 			// console.log(str);
 
 			str = str.replace(/\ style=[\'\"][^\'\"]*[\'\"]/gim, "")
 			         .replace(/\ class=[\'\"][^\'\"]*[\'\"]/gim, "")
 			         .replace(/\ lang=[\'\"][^\'\"]*[\'\"]/gim, "")
-			         .replace(/\ type=[\'\"][^\'\"]*[\'\"]/gim, "");
+			         .replace(/\ type=[\'\"][^\'\"]*[\'\"]/gim, "")
+			         .replace(/\ width=[\'\"][^\'\"]*[\'\"]/gim, "")
+			         .replace(/\ height=[\'\"][^\'\"]*[\'\"]/gim, "")
+			         .replace(/\ align=[\'\"][^\'\"]*[\'\"]/gim, "")
+			         .replace(/\ valign=[\'\"][^\'\"]*[\'\"]/gim, "")
+			         .replace(/\ border=[\'\"][^\'\"]*[\'\"]/gim, "")
+			         .replace(/\ cellspacing=[\'\"][^\'\"]*[\'\"]/gim, "")
+			         .replace(/\ cellpadding=[\'\"][^\'\"]*[\'\"]/gim, "")
+					 ;
 
 			// console.log(str);
+			str = globalCallback(str);
 			return resolve();
 		});
 	}
@@ -76,13 +86,15 @@ function processText(str) {
 			console.info('>>> removeTrash');
 			// console.log(str);
 
-			str = str.replace(/<o:p><\/o:p>/gi, "")
+			str = str.replace(/<o:p>((?!<\/o:p>).)*<\/o:p>/gi, "")
 			         .replace(/<\/?span>/gi, "")
 			         .replace(/<\/?div>/gi, "")
 			         .replace(/<!--\[if\ !supportAnnotations\]-->[^!]*<!--\[endif\]-->/gi, '')
-			         .replace(/<!--.*-->/gi, '');
+			         .replace(/<!--.*-->/gi, '')
+			         ;
 
 			// console.log(str);
+			str = globalCallback(str);
 			return resolve();
 		});
 	}
@@ -93,22 +105,10 @@ function processText(str) {
 			console.info('>>> removeBreaks');
 			// console.log(str);
 
-			str = str.replace(/[\r\n,\n\r,\r,\n,\t,\0]+/gi, " ");
+			str = str.replace(/[\r\n\t\0]+/gi, " ");
 
 			// console.log(str);
-			return resolve();
-		});
-	}
-
-	// пустые теги
-	function removeEmptyTags() {
-		return new Promise(function(resolve, reject) {
-			console.info('>>> removeTrash');
-			// console.log(str);
-
-			str = str.replace(/<[A-z]*>(\ *)<\/[A-z]*>/gi, "$1");
-
-			// console.log(str);
+			str = globalCallback(str);
 			return resolve();
 		});
 	}
@@ -120,9 +120,11 @@ function processText(str) {
 			// console.log(str);
 
 			str = str.replace(/&quot;/gi, "\"")
-			         .replace(/&nbsp;/gi, " ");
+			         .replace(/&nbsp;/gi, " ")
+			         ;
 
 			// console.log(str);
+			str = globalCallback(str);
 			return resolve();
 		});
 	}
@@ -140,6 +142,7 @@ function processText(str) {
 			         ;
 
 			// console.log(str);
+			str = globalCallback(str);
 			return resolve();
 		});
 	}
@@ -169,6 +172,23 @@ function processText(str) {
 			str = str.replace(/<\/li-num>/gi, "</li>");
 
 			// console.log(str);
+			str = globalCallback(str);
+			return resolve();
+		});
+	}
+
+	// таблицы
+	function handleTables() {
+		return new Promise(function(resolve, reject) {
+			console.info('>>> handleTables');
+			// console.log(str);
+
+			str = str.replace(/<td>\s*<p>/gi, "<td>")
+			         .replace(/<\/p>\s*<\/td>/gi, "</td>")
+			         ;
+
+			// console.log(str);
+			str = globalCallback(str);
 			return resolve();
 		});
 	}
@@ -184,15 +204,34 @@ function processText(str) {
 			         .replace(/<li>/gi, "\t<li>") // отступы для <li>
 			         .replace(/<ul>/gi, "<ul>\r\n") // перенос после <ul>
 			         .replace(/<ol>/gi, "<ol>\r\n") // перенос после <ol>
-			         .replace(/<\/ul>/gi, "</ul>\r\n")  // перенос после </ul>
+			         .replace(/<\/ul>/gi, "</ul>\r\n") // перенос после </ul>
+			         .replace(/<(\/?tr)>/gi, "\t<$1>\r\n") // отступ для <tr>
+			         .replace(/<(td[^>]*)>/gi, "\t\t<$1>") // отступ для <td>
+			         .replace(/<(\/?table)>/gi, "<$1>\r\n") // перенос после </table>
+			         .replace(/<(\/?tbody)>/gi, "<$1>\r\n") // перенос после </tbody>
+			         .replace(/<(\/td[^>]*)>/gi, "</td>\r\n") // перенос после </td>
 			         .replace(/\ {2,}/gi, " ") // множественные пробелы
 					 .replace(/<p>\ */gi, '<p>') // пробелы в начале <p>
 					 .replace(/<li>\ */gi, '<li>') // пробелы в начале <li>
-			         .replace(/^\ */gim, ''); // пробелы в начале строк
+			         .replace(/^\ */gim, '') // пробелы в начале строк
+			         ;
 
 			// console.log(str);
 			return resolve();
 		});
+	}
+
+	// функция вызываемая в конце каждой обработки (подчищаем мусор ...)
+	function globalCallback(str) {
+		str = removeEmptyTags(str);
+
+		return str;
+
+		function removeEmptyTags(str) {
+			str = str.replace(/<[A-z]*>(\ *)<\/[A-z]*>/gi, "$1");
+			if (str.match(/<[A-z]*>(\ *)<\/[A-z]*>/gi)) str = removeEmptyTags(str);
+			return str;
+		}
 	}
 }
 
