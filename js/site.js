@@ -151,7 +151,7 @@ function processText(str) {
 	function handleLists() {
 		return new Promise(function(resolve, reject) {
 			console.info('>>> handleLists');
-			// console.log(str);
+			console.log(str);
 
 			// маркированные списки
 			// стираем все <ul>
@@ -165,7 +165,7 @@ function processText(str) {
 
 			// нумерованные списки
 			str = str.replace(/<\/?ol>/gi, "");
-			str = str.replace(/<p>(((?!<\/p>).)*)(\d\))(((?!<\/p>).)*)<\/p>/gi, "<li-num>$1$4</li-num>")
+			str = str.replace(/<p>(\ *)(\d\))(((?!<\/p>).)*)<\/p>/gi, "<li-num>$1$3</li-num>")
 			str = str.replace(/(<li-num>((?!<\/li-num>).)*<\/li-num>)/gi, "<ol>$1</ol>");
 			str = str.replace(/<\/ol>\ *<ol>/gi, "");
 			str = str.replace(/<li-num>/gi, "<li>");
