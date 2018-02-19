@@ -39,6 +39,7 @@ function processText(str) {
 		.then(handleLists)
 		.then(handleTables)
 		.then(handleHeading)
+		.then(removeLinkDomain)
 		.then(formatStr)
 		.then(endProcess)
 		;
@@ -198,13 +199,28 @@ function processText(str) {
 	function handleHeading() {
 		return new Promise(function(resolve, reject) {
 			console.info('>>> handleHeading');
-			console.log('--- '+str);
+			// console.log('--- '+str);
 
 			str = str.replace(/<p><b>&lt;h(\d)&gt;/gi, "<h$1>")
 			         .replace(/&lt;\/h(\d)&gt;<\/b><\/p>/gi, "</h$1>")
 			         ;
 
-			console.log('--- '+str);
+			// console.log('--- '+str);
+			str = globalCallback(str);
+			return resolve();
+		});
+	}
+
+	// убираем домен из ссылок
+	function removeLinkDomain() {
+		return new Promise(function(resolve, reject) {
+			console.info('>>> removeLinkDomain');
+			// console.log('--- '+str);
+
+			str = str.replace(/https?:\/\/[w\.]*((?!(\.ru|\.com|\.net)).)*(\.ru|\.com|\.net)/gi, "")
+			         ;
+
+			// console.log('--- '+str);
 			str = globalCallback(str);
 			return resolve();
 		});
