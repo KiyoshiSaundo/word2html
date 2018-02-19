@@ -38,6 +38,7 @@ function processText(str) {
 		.then(doubleTags)
 		.then(handleLists)
 		.then(handleTables)
+		.then(handleHeading)
 		.then(formatStr)
 		.then(endProcess)
 		;
@@ -151,7 +152,7 @@ function processText(str) {
 	function handleLists() {
 		return new Promise(function(resolve, reject) {
 			console.info('>>> handleLists');
-			console.log(str);
+			// console.log(str);
 
 			// маркированные списки
 			// стираем все <ul>
@@ -193,6 +194,22 @@ function processText(str) {
 		});
 	}
 
+	// делаем заголовки
+	function handleHeading() {
+		return new Promise(function(resolve, reject) {
+			console.info('>>> handleHeading');
+			console.log('--- '+str);
+
+			str = str.replace(/<p><b>&lt;h(\d)&gt;/gi, "<h$1>")
+			         .replace(/&lt;\/h(\d)&gt;<\/b><\/p>/gi, "</h$1>")
+			         ;
+
+			console.log('--- '+str);
+			str = globalCallback(str);
+			return resolve();
+		});
+	}
+
 	// форматирум результат
 	function formatStr(){
 		return new Promise(function(resolve, reject) {
@@ -210,6 +227,8 @@ function processText(str) {
 			         .replace(/<(\/?table)>/gi, "<$1>\r\n") // перенос после </table>
 			         .replace(/<(\/?tbody)>/gi, "<$1>\r\n") // перенос после </tbody>
 			         .replace(/<(\/td[^>]*)>/gi, "</td>\r\n") // перенос после </td>
+			         .replace(/<(h\d)>/gi, "\r\n<$1>") // перенос перед </h*>
+			         .replace(/<(\/h\d)>/gi, "<$1>\r\n") // перенос после </h*>
 			         .replace(/\ {2,}/gi, " ") // множественные пробелы
 					 .replace(/<p>\ */gi, '<p>') // пробелы в начале <p>
 					 .replace(/<li>\ */gi, '<li>') // пробелы в начале <li>
@@ -223,13 +242,14 @@ function processText(str) {
 
 	// функция вызываемая в конце каждой обработки (подчищаем мусор ...)
 	function globalCallback(str) {
-		str = removeEmptyTags(str);
+		str = removeEmptyTags(str); // рекурсивно убираем пустые теги
 
 		return str;
 
 		function removeEmptyTags(str) {
 			str = str.replace(/<[A-z]*>(\ *)<\/[A-z]*>/gi, "$1");
-			if (str.match(/<[A-z]*>(\ *)<\/[A-z]*>/gi)) str = removeEmptyTags(str);
+			if (str.match(/<[A-z]*>(\ *)<\/[A-z]*>/gi))
+				str = removeEmptyTags(str);
 			return str;
 		}
 	}
