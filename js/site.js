@@ -55,6 +55,8 @@ function processText(str) {
 		console.info('=== endProcess');
 		elTextOut.innerHTML = str;
 		elExample.innerHTML = str;
+
+		elTextOut.select(); // выделить обработанный текст
 	}
 
 	// style, class...
